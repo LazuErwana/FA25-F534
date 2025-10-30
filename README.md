@@ -3,3 +3,4 @@ Class repo for BUS-FIN534
 Edited 10/21/35 for test
 Instructor edited
 Lazu was here
+Teacher is stilll herererre

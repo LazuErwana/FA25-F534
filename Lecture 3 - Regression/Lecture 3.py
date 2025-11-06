@@ -8,6 +8,7 @@ Created on Sun Nov  2 10:19:53 2025
 %reset -f
 %clear
 
+<<<<<<< Updated upstream
 import os
 
 # Assume current working directory is /home/user/project
@@ -18,6 +19,9 @@ os.chdir("Lecture 3 - Regression")
 print(f"CWD after entering 'data': {os.getcwd()}")
 
 # Reading from a CSV File 
+=======
+# Reading from a CSV File #load pandas into memory
+>>>>>>> Stashed changes
 import pandas as pd
 
 train = pd.read_csv('train.csv')

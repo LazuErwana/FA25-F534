@@ -30,8 +30,10 @@ val = pd.read_csv('validate.csv')
 os.chdir("..")
 
 # Creating the "X" and "y" variables. We drop Salary from "X"
+# axis = 1 mean that it will drop the entire column called 'Salary'
 X_train, X_val = train.drop('Salary', axis=1), val.drop('Salary', axis=1)
 y_train, y_val = train[['Salary']], val[['Salary']] 
+
 
 # Importing models
 from sklearn.linear_model import LinearRegression

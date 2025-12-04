@@ -29,6 +29,7 @@ values_to_keep = ['Fully Paid', 'Charged Off']
 df = df[df['loan_status'].isin(values_to_keep)]
 df['loan_status'] = df['loan_status'].replace(
     {'Fully Paid': '1', 'Charged Off': '0'})
+
 df['loan_status'] = df['loan_status'].astype(int)
 
 df['loan_status'].value_counts()

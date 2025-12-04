@@ -32,7 +32,7 @@ def stratified_sample(df, col_name, frac):
     return df.groupby(col_name).apply(lambda x: x.sample(frac=frac, random_state=42)).reset_index(drop=True)
 
 # Example usage:
-# Assuming 'df' has a column 'product_type'
+# Assuming 'df' has a column 'loan_status'
 sampled_df = stratified_sample(df, 'loan_status', 0.2) # Sample 20% from each product type
 freq = sampled_df['loan_status'].value_counts()           # count frequency of different classes in training swet
 freq/sum(freq)*100 

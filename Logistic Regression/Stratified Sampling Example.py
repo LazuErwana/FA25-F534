@@ -4,34 +4,27 @@ Created on Wed Dec  3 14:56:05 2025
 
 @author: taadair
 """
-
+# Clean up
+%reset -f
+%clear
 
 # import packages
 import os
-import warnings
-warnings.filterwarnings('ignore')
-
 import pandas as pd
-import numpy as np
 
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-from sklearn.linear_model import LogisticRegression
-
-from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
-from sklearn.metrics import confusion_matrix, classification_report, roc_curve, roc_auc_score
-from sklearn.metrics import precision_recall_curve, auc, average_precision_score
 
 # Assume current working directory is /home/user/project
 # Change to a subdirectory
 os.chdir("Logistic Regression")
 
 # Reading from Excel Files 
-df = pd.read_excel('lending_clubFull_Data_Set.xlsx')
+df = pd.read_csv('LC_20.zip')
 
 # Change back to FA25-F534 directory
 os.chdir("..")
+
+freq = df['loan_status'].value_counts()           # count frequency of different classes in training swet
+freq/sum(freq)*100   
 
 def stratified_sample(df, col_name, frac):
     # Group by the specified column and apply the sample function to each group
@@ -40,4 +33,14 @@ def stratified_sample(df, col_name, frac):
 
 # Example usage:
 # Assuming 'df' has a column 'product_type'
-sampled_df = stratified_sample(df, 'product_type', 0.2) # Sample 20% from each product type
+sampled_df = stratified_sample(df, 'loan_status', 0.2) # Sample 20% from each product type
+freq = sampled_df['loan_status'].value_counts()           # count frequency of different classes in training swet
+freq/sum(freq)*100 
+
+# Change to a subdirectory
+os.chdir("Logistic Regression")
+
+sampled_df.to_csv('LC_04.csv')
+
+# Change back to FA25-F534 directory
+os.chdir("..")  

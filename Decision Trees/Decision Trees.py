@@ -65,32 +65,8 @@ plot_tree(clf, filled=True, feature_names=X_train.columns, proportion=True)
 plt.savefig("LC Decision Tree.png")
 plt.show()
 
-# y_train_pred = clf.predict_proba(X_train)
-# y_val_pred=clf.predict_proba(X_val)
-# y_test_pred=clf.predict_proba(X_test)
 
-# print (y_train_pred)
-
-# # Calculate maximum likelihood for training set, validation set, and test set
-
-# mle_vector_train = np.log(np.where(y_train == 1, y_train_pred[:,1], y_train_pred[:,0]))
-# mle_vector_val = np.log(np.where(y_val == 1, y_val_pred[:,1], y_val_pred[:,0]))
-# mle_vector_test = np.log(np.where(y_test == 1, y_test_pred[:,1], y_test_pred[:,0]))
-
-# # Calculate cost functions from maximum likelihoods
-
-# cost_function_training=np.negative(np.sum(mle_vector_train)/len(y_train))
-# cost_function_val=np.negative(np.sum(mle_vector_val)/len(y_val))
-# cost_function_test=np.negative(np.sum(mle_vector_test)/len(y_test))
-
-# print (y_train_pred)
-
-
-# print('cost function training set =', cost_function_training)
-# print('cost function validation set =', cost_function_val)
-# print('cost function test set =', cost_function_test)
-
-######
+# Implementing the Tree
 
 THRESHOLD = [.75,.80,.85]
 results = pd.DataFrame(columns=["THRESHOLD", "accuracy", "true pos rate", "true neg rate", "false pos rate", "precision", "f-score"]) # df to store results

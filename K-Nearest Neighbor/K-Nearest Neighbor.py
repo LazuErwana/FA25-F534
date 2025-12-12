@@ -52,7 +52,7 @@ print(f"R-squared: {r2}")
 
 # Let's test for different values of k
 
-for i in range(1,9):                                                                                        # iterate over each threshold        
+for i in range(1,20):                                                                                        # iterate over each threshold        
                                                                          # fit data to model
     # Initialize the model with a chosen number of neighbors (k=5 in this example)
     k_value = i 
@@ -75,4 +75,4 @@ for i in range(1,9):                                                            
     print(f"Mean Squared Error: {mse}")
     print(f"R-squared: {r2}")
     
-   
+#K-13 is the best k, as it has the lowest mse.   
